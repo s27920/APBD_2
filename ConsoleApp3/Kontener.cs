@@ -2,12 +2,13 @@ namespace ConsoleApp3;
 
 public abstract class Kontener
 {
-    protected double wysokosc;
-    protected double glebokosc;
+    protected double Wysokosc;
+    protected double Glebokosc;
     protected double wagaWlasna;
     protected double masaladunku;
-    protected string numSer;
-    protected double maxLadownosc;
+    protected string NumSer;
+    protected double MaxLadownosc;
+    public static int Counter = 0;
 
     public double WagaWlasna
     {
@@ -21,17 +22,17 @@ public abstract class Kontener
         set => masaladunku = value;
     }
 
-    public static int counter = 0;
+    
 
     protected Kontener(double wysokosc, double glebokosc, double wagaWlasna, double masaladunku, double maxLadownosc)
     {
-        this.wysokosc = wysokosc;
-        this.glebokosc = glebokosc;
+        this.Wysokosc = wysokosc;
+        this.Glebokosc = glebokosc;
         this.wagaWlasna = wagaWlasna;
         this.masaladunku = masaladunku;
-        this.maxLadownosc = maxLadownosc;
+        this.MaxLadownosc = maxLadownosc;
     }
-    public virtual void oproznij()
+    public virtual void Oproznij()
     {
         masaladunku = 0;
     }
@@ -41,10 +42,10 @@ public abstract class Kontener
         try
         {
             double nowy = masaladunku + waga;
-            if (nowy > this.maxLadownosc)
+            if (nowy > this.MaxLadownosc)
             {
-                masaladunku = maxLadownosc;
-                throw new OverFillException("zbyt duży ładunek, odrzucono " + (nowy - maxLadownosc) + "kg ładunku");
+                masaladunku = MaxLadownosc;
+                throw new OverFillException("zbyt duży ładunek, odrzucono " + (nowy - MaxLadownosc) + "kg ładunku");
             }
                 masaladunku += waga; 
         }
@@ -56,7 +57,7 @@ public abstract class Kontener
     }
     public override string ToString()
     {
-        return "[" + wysokosc +", " + glebokosc + ", " + wagaWlasna + ", " + masaladunku + ", " + maxLadownosc;
+        return "[" + Wysokosc +", " + Glebokosc + ", " + wagaWlasna + ", " + masaladunku + ", " + MaxLadownosc;
     }
     
 }

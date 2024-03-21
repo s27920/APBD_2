@@ -42,7 +42,7 @@ public class Kontenerowiec
 
     public void Rozladuj(Kontener kontener)
     {
-        kontener.oproznij();
+        kontener.Oproznij();
     }
 
     public void Zastap(Kontener wy, Kontener we)
@@ -53,8 +53,15 @@ public class Kontenerowiec
 
     public void Przenies(Kontenerowiec wy, Kontenerowiec we, Kontener kontener)
     {
-        wy.Wyjmij(kontener);
-        we.Zaladuj(kontener);
+        if (wy._ladunek.Contains(kontener))
+        {
+            wy.Wyjmij(kontener);
+            we.Zaladuj(kontener);
+        }
+        else
+        {
+            Console.WriteLine("kontener nie znajduje się w ładowni zadanego statku");
+        }
     }
 
     public override string ToString()

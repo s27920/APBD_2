@@ -2,12 +2,12 @@ namespace ConsoleApp3;
 
 public class Gazowy : Kontener, IHazardNotifier
 {
-    private double pressure;
+    private double _pressure;
 
     public Gazowy(double wysokosc, double glebokosc, double wagaWlasna, double masaladunku, double maxLadownosc, double pressure) : base(wysokosc, glebokosc, wagaWlasna, masaladunku, maxLadownosc)
     {
-        this.pressure = pressure;
-        this.numSer = "KON-G-" + counter++;
+        this._pressure = pressure;
+        this.NumSer = "KON-G-" + Counter++;
 
     }
 
@@ -18,10 +18,10 @@ public class Gazowy : Kontener, IHazardNotifier
 
     public override string ToString()
     {
-        return base.ToString() + ", " + pressure + "]";
+        return base.ToString() + ", " + _pressure + "]";
     }
 
-    public override void oproznij()
+    public override void Oproznij()
     {
         masaladunku = 0.05;
     }

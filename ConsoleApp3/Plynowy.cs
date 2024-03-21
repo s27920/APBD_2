@@ -7,27 +7,27 @@ public class Plynowy : Kontener, IHazardNotifier
     public Plynowy(double wysokosc, double glebokosc, double wagaWlasna, double masaladunku, double maxLadownosc, bool niebezpieczny) : base(wysokosc, glebokosc, wagaWlasna, masaladunku, maxLadownosc)
     {
         this._niebezpieczny = niebezpieczny;
-        this.numSer = "KON-P-" + counter++;
+        this.NumSer = "KON-P-" + Counter++;
 
         if (_niebezpieczny)
         {
-            this.maxLadownosc *= 0.5;
+            this.MaxLadownosc *= 0.5;
         }
         else
         {
             maxLadownosc *= 0.9;
         }
-        if (this.masaladunku > this.maxLadownosc)
+        if (this.masaladunku > this.MaxLadownosc)
         {
-            this.masaladunku = this.maxLadownosc;
-            Console.WriteLine("zbyt duży ładunek, zmniejszono do " + this.maxLadownosc);
-            Notify(numSer);
+            this.masaladunku = this.MaxLadownosc;
+            Console.WriteLine("zbyt duży ładunek, zmniejszono do " + this.MaxLadownosc);
+            Notify(NumSer);
         }
     }
 
     public override void Zaladuj(double waga)
     {
-        if (_aktualnaWaga+waga > maxLadownosc)
+        if (_aktualnaWaga+waga > MaxLadownosc)
         {
             _aktualnaWaga += waga;
         }
