@@ -18,6 +18,9 @@ public class Program
         Console.WriteLine(k2.ToString());
         k2.oproznij();
         Console.WriteLine(k2.ToString());
-        
+
+        Console.WriteLine(kontenerowiec.ToString());
+        kontenerowiec.Wyjmij(k2);
+        Console.WriteLine("\n"+kontenerowiec);
     }
 }

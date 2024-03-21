@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace ConsoleApp3;
 
 public class Kontenerowiec
@@ -25,7 +27,6 @@ public class Kontenerowiec
             _ladunek.Add(kontener);
             _ladunekAktualny = nowaWaga;
         }
-        _ladunek.Add(kontener); 
     }
 
     
@@ -55,7 +56,16 @@ public class Kontenerowiec
         wy.Wyjmij(kontener);
         we.Zaladuj(kontener);
     }
-    
-    
-    
+
+    public override string ToString()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        int counter = 1;
+        foreach (Kontener kontener in _ladunek)
+        {
+            stringBuilder.Append(counter++).Append(". ").Append(kontener).Append("\n");
+        }
+
+        return stringBuilder.ToString();
+    }
 }
