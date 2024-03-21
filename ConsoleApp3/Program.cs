@@ -1,4 +1,4 @@
-﻿using ConsoleApp3;
+﻿namespace ConsoleApp3;
 
 public class Program
 {
