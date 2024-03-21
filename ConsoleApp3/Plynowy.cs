@@ -11,11 +11,17 @@ public class Plynowy : Kontener, IHazardNotifier
 
         if (_niebezpieczny)
         {
-            base.maxLadownosc *= 0.5;
+            this.maxLadownosc *= 0.5;
         }
         else
         {
             maxLadownosc *= 0.9;
+        }
+        if (this.masaladunku > this.maxLadownosc)
+        {
+            this.masaladunku = this.maxLadownosc;
+            Console.WriteLine("zbyt duży ładunek, zmniejszono do " + this.maxLadownosc);
+            Notify(numSer);
         }
     }
 
@@ -26,6 +32,7 @@ public class Plynowy : Kontener, IHazardNotifier
             _aktualnaWaga += waga;
         }
     }
+    
 
 
     public void Notify(string contId)

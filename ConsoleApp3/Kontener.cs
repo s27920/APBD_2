@@ -38,10 +38,11 @@ public abstract class Kontener
     
     public virtual void Zaladuj(double waga)
     {
-        if (waga > this.maxLadownosc)
+        if (masaladunku + waga > this.maxLadownosc)
         {
             throw new OverFillException("zbyt duży ładunek");
         }
-        masaladunku = waga;
+        masaladunku += waga;
     }
+    
 }

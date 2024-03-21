@@ -28,6 +28,8 @@ public class Kontenerowiec
         _ladunek.Add(kontener); 
     }
 
+    
+
     public void Wyjmij(Kontener kontener)
     {
         if (_ladunek.Contains(kontener))
