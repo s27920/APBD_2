@@ -38,11 +38,25 @@ public abstract class Kontener
     
     public virtual void Zaladuj(double waga)
     {
-        if (masaladunku + waga > this.maxLadownosc)
+        try
         {
-            throw new OverFillException("zbyt duży ładunek");
+            double nowy = masaladunku + waga;
+            if (nowy > this.maxLadownosc)
+            {
+                masaladunku = maxLadownosc;
+                throw new OverFillException("zbyt duży ładunek, odrzucono " + (nowy - maxLadownosc) + "kg ładunku");
+            }
+                masaladunku += waga; 
         }
-        masaladunku += waga;
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+       
+    }
+    public override string ToString()
+    {
+        return "[" + wysokosc +", " + glebokosc + ", " + wagaWlasna + ", " + masaladunku + ", " + maxLadownosc;
     }
     
 }

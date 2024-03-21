@@ -16,7 +16,11 @@ public class Gazowy : Kontener, IHazardNotifier
         Console.WriteLine("niebezpieczna sytuacja w kontenerze " + contId);
     }
 
-    
+    public override string ToString()
+    {
+        return base.ToString() + ", " + pressure + "]";
+    }
+
     public override void oproznij()
     {
         masaladunku = 0.05;

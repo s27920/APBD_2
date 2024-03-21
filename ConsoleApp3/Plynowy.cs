@@ -32,8 +32,12 @@ public class Plynowy : Kontener, IHazardNotifier
             _aktualnaWaga += waga;
         }
     }
-    
 
+
+    public override string ToString()
+    {
+        return base.ToString() + ", " +_niebezpieczny + ", " + _aktualnaWaga + "]";
+    }
 
     public void Notify(string contId)
     {

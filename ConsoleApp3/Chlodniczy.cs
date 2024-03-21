@@ -18,4 +18,9 @@ public class Chlodniczy : Kontener
         this.numSer = "KON-C-" + counter++;
 
     }
+
+    public override string ToString()
+    {
+        return base.ToString() + ", " + rodzajProduktu + ", " + temp + "]";
+    }
 }

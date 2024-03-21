@@ -13,6 +13,11 @@ public class Program
         kontenerowiec.Zaladuj(k2);
         kontenerowiec.Zaladuj(k3);
         
+        Console.WriteLine(k2.ToString());
         k2.Zaladuj(850);
+        Console.WriteLine(k2.ToString());
+        k2.oproznij();
+        Console.WriteLine(k2.ToString());
+        
     }
 }
